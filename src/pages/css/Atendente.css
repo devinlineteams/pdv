@@ -1,0 +1,101 @@
+@media (max-width: 3840px) {
+    .bodyPainel{
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 5% 75% 20%;
+
+        & .menu{
+            height: 100vh;
+            background-color: #0069BF;
+        }
+        & .painel{
+            background-color:rgb(207, 80, 80);
+            display: grid;
+            grid-template-rows: 10% 80% 10%;
+
+            & .inputsProducto{
+                width: 100%;
+                height: 100px;
+                background-color:#585858;
+                display: grid;
+                grid-template-columns: 10% 90%;
+                margin: 0px;
+
+                & #amount{
+                    padding-left: 45%;
+                    font-size: 45px;
+                    background-color: #3A3636;
+                    color: white;
+                }
+                & #codBarra{
+                    background-color: #585858;
+                    color: white;
+                    padding-left: 5%;
+                    font-size: 45px;
+                }
+            }
+
+            & #list{
+                background-color: white;
+            }
+            & #tot{
+                background-color: white;
+                display: grid;
+                grid-template-columns: 80% 20%;
+
+                & #detail-full{
+                    background-color:#3A3636;
+                    display: grid;
+                    grid-template-columns: 15% 75%;
+
+                    & #lb-tot-item{
+                        background-color: none;
+                        padding-top: 15px;
+                        padding-left: 35%;
+                        font-size: 60px;
+                        color: white;
+                    }
+
+                    & #lb-v-tot{
+                        text-align: center;
+                        padding-top: 15px;
+                        padding-left: 50%;
+                        font-size: 60px;
+                        color: white;
+                    }
+                }
+                & #close-sale{
+                    padding-top: 15px;
+
+                    & button{
+                        background-color: #0069BF;
+                        width: 80%;
+                        height: 55px;
+                        padding-top: 0px;
+                        font-size: 25px;
+                        margin-left: 30px;
+                        color: white;
+                    }
+                }
+            }
+        }
+        & .painel-left{
+            width: 100%;
+            height: 100vh;
+            background-color: wheat;
+            display: grid;
+            grid-template-rows: 30% 70%;
+
+            & #subPainel{
+                background-color: #0069BF;
+            }
+            & #calc{
+                background-color: #748D5E;
+            }
+        }
+        
+    }
+
+}

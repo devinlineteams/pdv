@@ -1,0 +1,55 @@
+@media (max-width: 3840px) {
+    .dvLogin{
+        width: 100%;
+        height: 100vh;
+        background-color:#2F4F4F;
+        align-items: center;
+
+        & .loginInputs{
+            width: 400px;
+            height: 500px;
+            margin-left: 42.5%;
+            margin-top: 5%;
+            float: inline-start;
+            padding: 25px;
+            background-color: #F0F8FF;
+            border: solid 1px black;
+            box-shadow: 1px 1px 10px 2px #aaaaaa;
+
+            & h1{
+                width: 92.5%;
+                height: 50px;
+                color: black;
+                padding-top: 10px;
+                text-align: left;
+                padding-left: 0px;
+                margin-bottom: 15px;
+              /*  background-color: green;*/
+            }
+            
+            & label{
+                font-size: 20px;
+            }
+           
+            & input{
+                width: 95%;
+                height: 45px;
+                margin-top: 20px;
+                padding-left: 15px;
+                font-size: 20px;
+            }
+            & button{
+                width: 100%;
+                height: 45px;
+                margin-top: 40px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            & h3{
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+/*https://www.homehost.com.br/blog/tutoriais/tabela-de-cores-html/*/
