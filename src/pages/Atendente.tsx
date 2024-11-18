@@ -85,10 +85,10 @@ import ServiceAllProdutos from "../server/ServiceAllProdutos";
 
             handleDeletPorductListDisplay = (e:any)=>{
                   const {id} = e.target;
-                 /*
+                 
                   const ul = (document.getElementById('ul-li') as HTMLUListElement);
                   const li = (document.getElementById(id) as HTMLLIElement)
-                  ul.removeChild(li);*/
+                  ul.removeChild(li);
                   this.cart.deleteProduct(id);
             }
 
