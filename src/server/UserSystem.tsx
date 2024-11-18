@@ -17,7 +17,7 @@ class UserSystems{
      UserSystems.UserOfSystem.setSituacao = usuarioRetornado[0].situacao;
      const userInLogged = {atribuicao:usuarioRetornado[0].atrinuicao, estadoOfLogin:usuarioRetornado[0].estadoDeLogin, situation:usuarioRetornado[0].situacao}
      sessionStorage.setItem("loggedInUser",JSON.stringify(userInLogged));
-     console.log(usuarioRetornado);
+  
    }
 }
 

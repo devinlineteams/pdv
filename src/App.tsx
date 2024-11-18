@@ -4,7 +4,7 @@ import './App.css'
 import Principal from './pages/Principal';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Atendente from './pages/Atendente';
+import {Atendente} from './pages/Atendente';
 
 
 function App() {

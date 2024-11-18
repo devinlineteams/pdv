@@ -11,14 +11,14 @@
             background-color: #0069BF;
         }
         & .painel{
-            background-color:rgb(207, 80, 80);
+            background-color:none;
             display: grid;
-            grid-template-rows: 10% 80% 10%;
+            grid-template-rows: 10% 80%;
 
             & .inputsProducto{
                 width: 100%;
-                height: 100px;
-                background-color:#585858;
+                height: 90px;
+                background-color:none;
                 display: grid;
                 grid-template-columns: 10% 90%;
                 margin: 0px;
@@ -35,10 +35,99 @@
                     padding-left: 5%;
                     font-size: 45px;
                 }
+             
+                & #btnAddProduct{
+                    background-color: #1C7B95;
+                    color: white;
+                    font-size: 70px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    margin: 3px 1px auto 10px;
+                }
             }
 
             & #list{
                 background-color: white;
+                display: grid;
+                grid-gap:30px;
+                grid-template-rows: 60px 80%;
+
+                & #display{
+                    width: 83%;
+                    display: grid;
+                    margin-left: 10%;
+                    background-color: #748D5E;
+                    grid-template-columns: 92% 8%;
+
+                    & #dvDisplayProduct{
+                        height: 60px;
+                       
+                        margin-top: 5px;
+                        color:white;
+                        
+                        h1 {
+                            width: 80%;
+                            height: 50px;
+                            background-color: none;
+                            float: left;
+                            margin-top: 2px;
+                            margin-left: 30px;
+                            text-align: left;padding-top: 5px;
+                            justify-items: center;
+                        }
+                    }
+
+                    button {
+                        height: 55px;
+                        background-color: #1C7B95;
+                        border: none;
+                        font-size: 18px;
+                        color: white;
+                        margin-top: 3px;
+                        margin-right: 3px;
+                        border: solid 1px white;
+                        cursor: pointer;
+                    }
+
+                }
+                & #listProdctCar{
+                    width: 80%;
+                    height: 600px;
+                    background-color: white;
+                    margin-left: 10%;
+                    padding: 10px;
+                
+
+                    }
+
+                    & #ul-li{
+                        width: 98%;
+                        height: 550px;
+                        padding-left: 20px;
+                        overflow-y: auto;
+                        list-style: none;
+
+                        & .li-list-product{
+                            list-style: none;
+                            height: 33px;
+                            background-color: #F1EEEE;
+                            margin-top: 5px;
+                            margin-right: 15px;
+                            padding-left: 15px;
+                            padding-top: 10px;
+                            padding-bottom: 5px;
+                            color: black;
+                            display: grid;
+                            grid-template-columns: 50px 80px 450px 100px 110px 110px 35px 60px;
+
+                            & .lb-v-unit{
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+
+               
             }
             & #tot{
                 background-color: white;
@@ -71,16 +160,27 @@
 
                     & button{
                         background-color: #0069BF;
-                        width: 80%;
+                        width: 75%;
                         height: 55px;
                         padding-top: 0px;
                         font-size: 25px;
-                        margin-left: 30px;
+                        margin-left: 35px;
                         color: white;
+                        box-shadow: -1px 2px 7px 1px rgb(127, 127, 127);
+                        border: solid 1px rgb(36, 36, 36);
+                        border-radius: 20px;
+                        cursor: pointer;
+                    }
+                    & button:hover{
+                        margin-top: -2px;
+                        box-shadow: -1px 2px 12px 3px rgb(127, 127, 127);
+                        border: solid 1px white;
+                        background-color: #054478;
                     }
                 }
             }
         }
+        
         & .painel-left{
             width: 100%;
             height: 100vh;
@@ -95,7 +195,44 @@
                 background-color: #748D5E;
             }
         }
+        .btn-delete-li{
+            background-size: contain;
+            background-image: url('../../assets/lixeira-de-reciclagem.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
         
+        #md-dv-li{
+            width: 96%;
+            height: 45px;
+            margin-left: 20px;
+            padding-top: 3px;
+            padding-left: 10px;
+            background-color: #D9D9D9;
+            
+        }
+        #md-ul-li{
+           
+        }
+        #md-li{
+            width: 98%;
+            height: 40px;
+            margin-top: 0px;
+            list-style: none;
+            padding: 8px 3px 0px 3px;
+            color: black;
+            font-size: 20px;
+            display: grid;
+            grid-template-columns: 50px 80px 450px 100px 100px 125px 35px 60px;
+        }
+        .mg-btn-li{
+            margin-top: -3px;
+            border: none;
+        }
+        .btn-del-product:hover{
+            cursor: pointer;
+        }
+      
     }
 
-}
+

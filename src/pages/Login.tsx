@@ -19,7 +19,7 @@ import './css/login.css'
             if(UserSystems.UserOfSystem.getEstadoDeLogin ==true){
                 if(UserSystems.UserOfSystem.getAtribuicao == "vendedor"){
                     navigate('/pdv');
-                    console.log(UserSystems.UserOfSystem)
+                
                 }
             }
 

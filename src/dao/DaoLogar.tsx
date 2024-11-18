@@ -3,7 +3,7 @@ import Funcionario from "../model/Funcionario";
 class DaoLogar{
 
 
-  daoLogar(){
+  daoLogar(login:string, password:string){
 
     const objetoUsuario = [
         {
