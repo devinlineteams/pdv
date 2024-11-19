@@ -6,6 +6,7 @@ class Carrinho{
     static totalItem:number =0;
     static productAdd = new Produto('','','','','','',0,'','',0,0);
    
+  
 
     static cart:Produto[] = [
 
@@ -13,32 +14,30 @@ class Carrinho{
 
 
     addProductToTheCart(product:Produto){
-    // this.calcValorTotal(product.getVTotal());
-      const products = Carrinho.cart;
-      console.log(products);
+    //git psuh this.calcValorTotal(product.getVTotal());
+    // const products = Carrinho.cart;
+    //  console.log(products);
 
      Carrinho.cart.push(product);
 
     }
     deleteProduct(id:number){
-      const idString = id-1;
-  
+      const idString = id;
+
+      const products = Carrinho.cart;
+      
       console.log(" o id recebido é: "+id);
-      console.log(` e o produto na position ${idString} no array é: ${Carrinho.cart[idString].getId()}`);
+
    
-       /* for(let i =0; i<Carrinho.cart.length;i++){
+        for(let i =0; i<Carrinho.cart.length;i++){
 
-         // const objetos = Carrinho.cart[i];
-         // console.log("o carrinho antes do for: "+objetos.getId());
-
-          if(Carrinho.cart[i].getId()==idString){
+          if(Carrinho.cart[i].getId()==idString.toString()){
              Carrinho.cart.splice(i,1);
           }
       
-        }*/
-     
-       
+        }
 
+        console.log(products);
     }
     static calcValorTotal(vt:number){
       Carrinho.valueTotal+=vt;

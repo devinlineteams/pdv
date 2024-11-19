@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import "./css/Atendente.css"
 
@@ -10,7 +9,7 @@ import ServiceAllProdutos from "../server/ServiceAllProdutos";
 
   export class Atendente extends Component{
 
-      product = new Produto('','','','','','',0,'','',0,0);
+      
       cartEnd:Produto [] = [];
 
       state ={
@@ -35,19 +34,21 @@ import ServiceAllProdutos from "../server/ServiceAllProdutos";
 
                   for(let i=0; i<this.elista.length;i++){
                         if(this.elista[i].codBarra == value){
-                             
-                              this.product.setId(this.elista[i].id);
-                              this.product.setName(this.elista[i].name)
-                              this.product.setCategory(this.elista[i].category);
-                              this.product.setMarca(this.elista[i].marca);
-                              this.product.setLine(this.elista[i].line);
-                              this.product.setCodBarra(this.elista[i].codBarra);
-                              this.product.setPrice(this.elista[i].price);
-                              this.product.setTom(this.elista[i].tom);
-                              this.product.setValidity(this.elista[i].validity);
-                              this.product.setQuantidadeEstoque(this.elista[i].quantidadeEstoque);
-                              this.atribuirElementoDisplayProduto();
-                              this.handleOnClickAddProdutoCart();
+                            const product = new Produto('','','','','','',0,'','',0,0);
+
+                              product.setId(this.elista[i].id);
+                              product.setName(this.elista[i].name)
+                              product.setCategory(this.elista[i].category);
+                              product.setMarca(this.elista[i].marca);
+                              product.setLine(this.elista[i].line);
+                              product.setCodBarra(this.elista[i].codBarra);
+                              product.setPrice(this.elista[i].price);
+                              product.setTom(this.elista[i].tom);
+                              product.setValidity(this.elista[i].validity);
+                              product.setQuantidadeEstoque(this.elista[i].quantidadeEstoque);
+
+                              this.atribuirElementoDisplayProduto(product);
+                              this.handleOnClickAddProdutoCart(product);
 
 
                              
@@ -55,14 +56,14 @@ import ServiceAllProdutos from "../server/ServiceAllProdutos";
                   }
                 //  this.setState({searchValue:value});
             }
-           async atribuirElementoDisplayProduto(){
+           async atribuirElementoDisplayProduto(product:Produto){
                   const mount = (document.getElementById('amount') as HTMLInputElement).value;
-                  this.product.setQuant(parseFloat(mount))
-                  this.product.setvTotla(parseFloat(mount));
+                  product.setQuant(parseFloat(mount))
+                  product.setvTotla(parseFloat(mount));
                   const divSearch =(document.getElementById('dvDisplayProduct') as HTMLDivElement);
                   const h1element = (document.createElement('h1') as unknown as HTMLTitleElement);
                   h1element.setAttribute('id', 'dpProdduto');
-                  h1element.textContent = ` ${this.product.getName()} ${this.product.getMarca()} Nº ${this.product.getTom()}, ${this.product.getLine()}` 
+                  h1element.textContent = ` ${product.getName()} ${product.getMarca()} Nº ${product.getTom()}, ${product.getLine()}` 
                   divSearch.appendChild(h1element);
             }
             deleteElementoDisplayProduto(){
@@ -73,13 +74,13 @@ import ServiceAllProdutos from "../server/ServiceAllProdutos";
                         divSearch.removeChild(h1element);
                   }  
             }
-            handleOnClickAddProdutoCart = ()=>{
+            handleOnClickAddProdutoCart = (product:Produto)=>{
                 
-                  Atendente.cart.addProductToTheCart(this.product)
+                  this.cart.addProductToTheCart(product)
                   this.setTotalItemInState();
                   this.setValorTotalInState();
                   this.deleteElementoDisplayProduto();
-                  this.createElementoLIDisplay();
+                  this.createElementoLIDisplay(product);
       
             }
 
@@ -98,7 +99,7 @@ import ServiceAllProdutos from "../server/ServiceAllProdutos";
             setTotalItemInState(){
                   this.setState({totalItem:this.cart.getTotalItem()})
             }
-            createElementoLIDisplay(){
+            createElementoLIDisplay(product:Produto){
                   const {totalItem} = this.state;
                   const ul = (document.getElementById('ul-li') as HTMLUListElement);
                   const li =  (document.createElement('li') as HTMLLIElement);
@@ -110,20 +111,20 @@ import ServiceAllProdutos from "../server/ServiceAllProdutos";
                   const lbvUnit = (document.createElement('label') as HTMLLabelElement);
                   const lbvTotal = (document.createElement('label') as HTMLLabelElement);
 
-                  lbQuant.textContent = this.product.getQuant().toString();
-                  lbvTotal.textContent = this.product.getVTotal().toString();
+                  lbQuant.textContent = product.getQuant().toString();
+                  lbvTotal.textContent = product.getVTotal().toString();
                   lbItem.textContent = (totalItem+1).toString();
-                  lbDesc.textContent = this.product.getName();
+                  lbDesc.textContent = product.getName();
                   li.setAttribute('class', 'li-list-product')
                   button.addEventListener('click',this.handleDeletPorductListDisplay);
-                  button.setAttribute('id', this.product.getId());
+                  button.setAttribute('id', product.getId());
                   button.setAttribute('class', 'btn-del-product btn-delete-li mg-btn-li')
                 //  button.textContent = "delete";
                   lbvUnit.setAttribute('class', 'lb-v-unit')
-                  lbvUnit.textContent = this.product.getPrice().toString();
+                  lbvUnit.textContent = product.getPrice().toString();
 
 
-                  li.setAttribute('id', this.product.getId());
+                  li.setAttribute('id', product.getId());
                   li.appendChild(lbItem);
                   li.appendChild(lbQuant);
                   li.appendChild(lbDesc);
@@ -238,13 +239,3 @@ import ServiceAllProdutos from "../server/ServiceAllProdutos";
             )
       }
   }
-
-  /*
-
-     componentDidUpdate(prevProps: Readonly<{}>, prevState: Readonly<{}>, snapshot?: any): void {
-                  
-     }
-     componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-           
-     }
-     */
